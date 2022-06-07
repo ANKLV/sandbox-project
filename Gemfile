@@ -17,6 +17,8 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+# Active Admin is a Ruby on Rails framework for creating elegant backends for website administration.
+gem 'activeadmin'
 # Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
