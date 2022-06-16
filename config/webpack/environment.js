@@ -1,4 +1,4 @@
-onst { environment } = require('@rails/webpacker')
+const { environment } = require('@rails/webpacker')
 const webpack = require('webpack')
 const config = environment.toWebpackConfig();
 
