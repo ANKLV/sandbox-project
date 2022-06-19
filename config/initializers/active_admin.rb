@@ -126,7 +126,7 @@ ActiveAdmin.setup do |config|
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.comments = false
+  config.comments = false
   #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
@@ -145,7 +145,7 @@ ActiveAdmin.setup do |config|
   #
   # Enable and disable Batch Actions
   #
-  config.batch_actions = true
+  # config.batch_actions = true
 
   # == Controller Filters
   #
@@ -285,7 +285,7 @@ ActiveAdmin.setup do |config|
   # hand side with a filter for each attribute of the registered model.
   # You can enable or disable them for all resources here.
   #
-  # config.filters = true
+  config.filters = true
   #
   # By default the filters include associations in a select, which means
   # that every record will be loaded for each association (up
@@ -294,18 +294,22 @@ ActiveAdmin.setup do |config|
   # of those filters by default here.
   #
   # config.include_default_association_filters = true
-
+  #
   # config.maximum_association_filter_arity = 256 # default value of :unlimited will change to 256 in a future version
   # config.filter_columns_for_large_association = [
-  #    :display_name,
+  #    # :display_name,
   #    :full_name,
-  #    :name,
-  #    :username,
-  #    :login,
-  #    :title,
+  #    # :name,
+  #    # :username,
+  #    # :login,
+  #    # :title,
   #    :email,
   #  ]
   # config.filter_method_for_large_association = '_starts_with'
+  ActiveAdmin.register User do
+    preserve_default_filters!
+    remove_filter :reset_password_token, :reset_password_sent_at, :remember_created_at
+  end
 
   # == Head
   #
@@ -334,4 +338,14 @@ ActiveAdmin.setup do |config|
   # You can switch to using Webpacker here.
   #
   config.use_webpacker = true
+
+  # ActiveAdmin.register User do
+  #   form do |f|
+  #     f.input :email
+  #     f.input :password
+  #     f.input :role
+  #     f.input :first_name
+  #     f.input :last_name
+  #   end
+  # end
 end
