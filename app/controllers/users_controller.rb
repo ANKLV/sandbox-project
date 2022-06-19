@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    new_user_params = user_params.except(:password) if user_params[:password].blank?
+    new_user_params = user_params.except(:encrypted_password) if user_params[:encrypted_password].blank?
     @user.update(new_user_params || user_params)
   end
 
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, ,:first_name, :last_name, :role)
+    params.require(:user).permit(:email, :encrypted_password, ,:first_name, :last_name, :role)
   end
 
   def set_user
