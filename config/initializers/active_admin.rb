@@ -365,7 +365,7 @@ ActiveAdmin.setup do |config|
     form do |f|
       f.inputs do
         f.input :email
-        f.input :encrypted_password
+        f.input :encrypted_password, label: "Password"
         f.input :role
         f.input :first_name
         f.input :last_name
