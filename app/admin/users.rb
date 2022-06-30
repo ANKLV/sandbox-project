@@ -23,9 +23,6 @@ ActiveAdmin.register User do
     column :last_name
     column :created_at
     column :updated_at
-    # column "Delete" do |user|
-    #   link_to "Delete", admin_user_path(user), method: :delete, data: {confirm: "Are you sure?"}
-    # end
     actions
   end
 
@@ -50,10 +47,6 @@ ActiveAdmin.register User do
     end
     f.actions
   end
-
-  # member_action :destroy, method: :delete do
-  #   redirect_to admin_user_path(resource), method: :delete
-  # end
 
   permit_params do
     permitted = %i[email encrypted_password role first_name last_name]
